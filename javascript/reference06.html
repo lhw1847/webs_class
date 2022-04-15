@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png" sizes="128x128">
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/js/prism.js">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascipt</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for()문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li class="active"><a href="reference06.html">함수</a></li>
+                <li><a href="reference07.html">조건문</a></li>
+                <li><a href="reference08.html">반복문</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="back"><a href="javascript03.html#dd">Back</a></div>
+    <main id="main">
+        <div class="doc">
+            <h2><strong>함수</strong></h2>
+            <p>함수란 한 마디로 프로그램의 코드를 저장한 공간이라고 할 수 있다.</p>
+            <p>함수를 사용하면 코드를 메모리에 저장했다가 필요할 때마다 호출하여 사용할 수 있다.</p>
+            <h4 class="mt20">변수와 함수의 차이</h4>
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>변수</th>
+                        <th>함수</th>
+                    </tr>
+                    <tr>
+                        <td>- 1개의 데이터만 저장한다.<br>
+                            - var라는 키워드를 이용하여<br>
+                            선언한다.<br>
+                            - 문자형, 숫자형, 논리형 데이터를<br>
+                            보관한다.<br>
+                            - 객체를 참조한다.</td>
+                        <td>- 자바스크립트 코드를 저장한다.<br>
+                            - funciton이라는 키워드를 이용하여<br>
+                            선언한다.<br>
+                            - 출력문, 제어문 등의 코드를<br>
+                            저장하고 데이터를 반환한다.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="mt50">선언적 함수</h3>
+            <p>가장 기본적으로 사용하는 함수의 형태이다.
+                기본적으로 함수는 함수 이름을 설정하고 함수 이름을 호출해야 실행이 된다.</p>
+            <h4 class="mt20">기본형</h4>
+            <div class="code">
+                <pre>function(){
+    자바스크립트 코드;
+}함수명;
+</div></pre>
+                <h4 class="mt20">예시</h4>
+                <div class="code">
+                    <pre>&lt;script&gt;
+    function myFnc(){
+        
+        document.write("hello");
+    }myFnc();
+&lt;//script&gt;</pre>
+                </div>
+                <div class="result">
+                    <h4 class="mt20">결과보기</h4>
+                </div>
+                <div class="code">hello</div>
+
+                <h3 class="mt50">익명함수</h3>
+                <p>익명 함수는 함수에 이름이 없기 때문에 변수에 넣어서 사용하는 함수이다.
+                    변수에는 숫자, 문자도 들어갈 수 있지만 함수도 들어갈 수 있다.</p>
+                <h4 class="mt20">기본형</h4>
+                <div class="code">
+                    <pre>함수명;
+function(){
+    자바스크립트 코드;
+}
+</div></pre>
+                    <h4 class="mt20">예시</h4>
+                    <div class="code">
+                        <pre>&lt;script&gt;
+    myFnc();
+    function myFnc(){
+        
+        document.write("hello");
+&lt;//script&gt;</pre>
+                    </div>
+                    <div class="result">
+                        <h4 class="mt20">결과보기</h4>
+                    </div>
+                    <div class="code">hello</div>
+
+
+                    <h3 class="mt50">매개변수 함수</h3>
+                    <p>기본 함수 정의문은 함수 안에 있는 코드를 실행할 때
+                        단순히 함수명으로 호출해서 코드를 실행했다.
+                        즉 함수를 호출할 때 값을 전달할 수 없었다.
+                        하지만 매개변수가 있는 함수 정의문은 함수를 호출할 때
+                        전달하고자 하는 값을 입력하여 호출할 수 있습니다.
+                        이렇게 전달된 값은 매개변수가 받아 함수 정의문에서
+                        사용할 수 있게 된다.</p>
+                    <h4 class="mt20">기본형</h4>
+                    <div class="code">
+                        <pre>function 함수명(매개변수1, 매개변수2,...매개변수n){
+    자바스크립트 코드;
+}
+함수명(데이터1, 데이터2,...데이터n);
+</div></pre>
+                        <h4 class="mt20">예시</h4>
+                        <div class="code">
+                            <pre>&lt;script&gt;
+        function myFnc(name, area){
+        document.write("안녕하세요." + name + "입니다.","&lt;br&gt;");
+        document.write("사는 곳은" + area + "입니다.","&lt;br&gt;&lt;br&gt;");
+    }
+    
+    myFnc("홍당무","서울");
+    myFnc("깍두기","부산");
+&lt;//script&gt;</pre>
+                        </div>
+                        <div class="result">
+                            <h4 class="mt20">결과보기</h4>
+                        </div>
+                        <div class="code">안녕하세요. 홍당무입니다.<br>
+                            사는 곳은 서울입니다.<br>
+                            <br>
+                            안녕하세요. 깍두기입니다<br>
+                            사는 곳은 부산입니다.<br></div>
+
+                        <h3 class="mt50">리턴값 함수</h3>
+                        <p>return 문은 함수에서 결괏값을 반환할 때 사용합니다.
+                            그리고 함수에서 return 문이 실행되면 반복문의 break 문과
+                            비슷하게 코드가 강제로 종료된다. 다시 말해 함수 정의문에
+                            return 문이 실행되면 함수를 호출했을 때 결괏값(data)을
+                            반환한다.
+                        </p>
+                        <h4 class="mt20">기본형</h4>
+                        <div class="code">
+                            <pre>function 함수명(){
+        자바스크립트 코드1;
+        return 데이터(값);
+
+        자바스크립트 코드2;
+}
+var 변수 = 함수명();
+</div></pre>
+                            <h4 class="mt20">예시</h4>
+                            <div class="code">
+                                <pre>&lt;script&gt;
+    functoin testAvg(arrData){
+        var sum = 0;
+        for (var i = 0; i &lt; arr data.length; i++){
+            sum += Number(prompt(arrData[i] + "점수는?", "0"));
+        }
+
+        var arrSubject = {"국어", "수학"};
+        var result = testAvg(arrSubject);
+
+        document.write("평균점수는" + result + "점입니다");
+&gt;script&gt;
+</div></pre>
+                                <div class="result">
+                                    <h4 class="mt20">결과보기</h4>
+                                </div>
+                                <div class="code">국어점수 : 80, 수학점수 : 70 = 평균 점수는 75점입니다.</div>
+                            </div>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        /* 넥슨고딕Lv1 */
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+            font-display: swap;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NexonLv1Gothic';
+        }
+
+        body {
+            width: 100%;
+            height: 6365px;
+        }
+
+        #header {
+            width: 100%;
+            background-color: #C2F6C1;
+        }
+
+        #header .menu {
+            width: 1200px;
+            height: 100px;
+            background-color: #6ECC6C;
+            margin: 0 auto;
+        }
+
+        #banner {
+            width: 100%;
+            background-color: #f89292;
+        }
+
+        #banner .banner {
+            width: 1200px;
+            height: 900px;
+            background-color: #ad7b7b;
+            margin: 0 auto;
+        }
+
+        #contents .con1 {
+            width: 100%;
+            height: 640px;
+            background-color: #b99e9e;
+        }
+
+        #contents .con1 .con11 {
+            background-color: #9ea9b9;
+            margin: 0 auto;
+            width: 1200px;
+            height: 640px;
+        }
+
+        #contents .con2 {
+            width: 100%;
+            height: 3250px;
+            background-color: #9d7777;
+        }
+
+        #contents .con2 .con22 {
+            background-color: #6a3434;
+            margin: 0 auto;
+            width: 1200px;
+            height: 3250px;
+        }
+
+        #contents .con3 {
+            width: 100%;
+            height: 1076px;
+
+        }
+
+        #contents .con3 .con33 {
+            margin: 0 auto;
+            width: 1200px;
+            height: 1076px;
+        }
+
+        #contents .con3 .con33 .img1 {
+            width: 365px;
+            height: 462px;
+            background: url(../site/webClass/img/img_text_bg1.jpg);
+            float: left;
+            margin: 129px 29px 0 0;
+        }
+
+        #contents .con3 .con33 .img2 {
+            width: 365px;
+            height: 462px;
+            background-image: url(../site/webClass/img/img_text_bg1.jpg);
+            float: left;
+            margin: 129px 25px 0 25px;
+        }
+
+        #contents .con3 .con33 .img3 {
+            width: 365px;
+            height: 462px;
+            background-image: url(../site/webClass/img/img_text_bg1.jpg);
+            float: right;
+            margin: 129px 0 0 23.75px;
+        }
+
+        #contents .con3 .con33 .text_title {
+            font-size: 57px;
+            font-weight: bold;
+            margin: 130px 130px 0 0;
+        }
+
+        #contents .con3 .con33 .text_1 {
+            font-size: 31px;
+            font-weight: 500;
+            float: left;
+            width: 419px;
+            margin-top: 35px;
+        }
+        #contents .con3 .con33 .text_11 {
+            font-size: 31px;
+            font-weight: 500;
+            float: left;
+            margin-top: 35px;
+        }
+        #contents .con3 .con33 .text_2 {
+            display: inline-block;
+            font-weight: 300;
+            font-size: 20px;
+            width: 415px;
+            margin-top: 10px;
+        }
+        #contents .con3 .con33 .text_21 {
+            display: inline-block;
+            font-weight: 300;
+            font-size: 20px;
+            width: 414px;
+        }
+        #contents .con3 .con33 .text_22 {
+            display: inline-block;
+            font-weight: 300;
+            font-size: 20px;
+        }
+
+        #footer {
+            width: 100%;
+            height: 400px;
+            background-color: #6e6565;
+        }
+
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        #skip {
+            position: relative;
+            z-index: 10000;
+        }
+
+        #skip a {
+            background: #000;
+            color: #fff;
+            position: absolute;
+            left: -400px;
+            top: 5;
+            padding: 20px 40px;
+            display: inline-block;
+            transition: left 0.3s ease-in;
+        }
+
+        #skip a:active,
+        #skip a:focus {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="skip">
+        <a href="#header">헤더 바로가기</a>
+        <a href="#banner">베너 바로가기</a>
+        <a href="#contents">컨텐츠 바로가기</a>
+        <a href="#footer">푸터 바로가기</a>
+    </div>
+    <div id="wrap">
+        <header id="header">
+            <h1 class="ir_so">헤더 영역</h1>
+            <main class="menu">
+                <h2 class="ir_so">메인 메뉴</h2>
+            </main>
+        </header>
+        <section id="banner">
+            <h2 class="ir_so">배너 영역</h2>
+            <div class="banner"></div>
+        </section>
+        <section id="contents">
+            <h2 class="ir_so">컨텐츠 영역</h2>
+            <article class="con1">
+                <h3 class="ir_so">컨텐츠 영역01</h3>
+                <div class="con11"></div>
+            </article>
+            <article class="con2">
+                <h3 class="ir_so">컨텐츠 영역02</h3>
+                <div class="con22"></div>
+            </article>
+            <article class="con3">
+                <h3 class="ir_so">컨텐츠 영역03</h3>
+                <div class="con33">
+                    <h3 class="text_title">FIND opportunities</h3>
+                    <div class="img1">
+                    </div>
+                    <div class="text">
+
+                    </div>
+                    <div class="img2">
+                    </div>
+                    <div class="img3">
+                    </div>
+                    <span class="text_1">Fintech</span>
+                    <span class="text_1">Digital Marketing</span>
+                    <span class="text_11">Platform</span>
+                    <p class="text_2">Payment</p>
+                    <p class="text_21">IMS</p>
+                    <p class="text_22">Commerce, Magazine</p>
+                </div>
+            </article>
+        </section>
+        <footer id="footer">
+            <h1 class="ir_so">푸터 영역</h1>
+            <div class="footer"></div>
+        </footer>
+    </div>
+</body>
+
+</html>

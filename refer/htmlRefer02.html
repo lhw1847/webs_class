@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/html.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/html.png">
+    <link rel="icon" href="../assets/face/html.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>이현우</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="html.html">HTML <em>웹표준/접근성/호환성</a></em></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="html.html">속성</a></li>
+                <li><a href="htmlRefer01.html">기초 문법</a></li>
+                <li class="active"><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="htmlRefer03.html">시멘틱 태그</a></li>
+                <li><a href="htmlGridSystem.html">그리드 시스템</a></li>
+                <li><a href="htmlSEO.html">검색 엔진 최적화</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div
+            class="doc">
+            <div class="table">
+                <h3><strong>웹표준</strong></h3>
+                <p>준화 된 언어를 사용함으로써 동일한 결과물을 보여주는 것을 웹표준이라고 한다.</p>
+                <p>웹표준은 2007년도부터 대중화 되기 시작하였다. 과거에는 웹표준이 없어서 table이라는 태그로만 브라우저를 구성하였다. 
+                   그러나 지금은 h1, h2, p, ul, ol 등 적재적소에 맞는 태그를 기술할 수 있게 되었다. 
+                   이렇게 알맞은 태그를 사용하여 HTML 문서를 작성하는 것을 시맨틱 마크업이라고 한다.
+                   내가 당장 보고있는 사이트가 웹 표준에 잘 맞게 작성이 되었는지를 확인할 수 있다. 
+                   <a href="http://validator.w3.org/">다음</a>을 눌러 검사 페이지에 입장하실 수 있다.</p>
+                <h3><strong>웹접근성</strong></h3>
+                <p>
+                    모두가 차별없이 웹에서 제공하는 정보를 이용할 수 있도록 하는 것이다.
+                </p>
+                <table>
+                <thead>
+                    <tr>
+                        <th>사용자층 확대</th>
+                        <th>구조와 표현의 분리</th>
+                        <th>호환성 확보</th>
+                        <th>작업, 유지보수 속도의 향상</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>다음 섹션에서 살펴보자</td>
+                    <td>과거에는 html로 구조와 표현(css)까지<br> 모두 아울렀다.</td>
+                    <td>크로스브라우징에 용이하다.</td>
+                    <td>CSS의 아이디와 클래스 등을 이용하여<br> 작업의 속도가 좋아졌다.</td>
+                </tbody>
+            </table>
+                <h3><strong>웹호환성</strong></h3>
+                <p>
+                    OS, 브라우저에 상관없이 유사한 화면으로<br> 동일한 정보에 접근이 가능해야 한다. 
+                    브라우저마다 코드를 표현하는 방식이 조금씩<br> 다르기 때문에 100% 동을한 화면은 불가능하다. 
+                    그러나 정보는 동일해야한다. 웹표준을 기술을<br> 지킨다고 해도 웹호환성을 100% 만족시키기는 어렵다.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>다양한 환경 적용</th>
+                            <th>새로운 기기 이용</th>
+                            <th>사용자층 확대</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>다양해진 사용자의 환경에 상관없이<br> 동일한 정보를 제공할 수 있다.</td>
+                            <td>OS가 업데이트 되거나, 새로운 기기가<br> 나와도 웹서비스 이용에는<br> 크게 문제가 없다.</td>
+                            <td>동일한 맥락이다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+        <!-- //refer -->
+
+    </main>
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

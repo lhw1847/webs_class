@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>이현우</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html">CSS <em>Block/Inline</a></em></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li class="active"><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">vendor prefix</a></li>
+                <li><a href="cssRefer08.html">image</a></li>
+                <li><a href="cssRefer09.html">ir 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3><strong>Block / Inline</strong></h3>
+                <h4>display: inline</h4>
+                <p>대표적인 태그로는 span을 예로 들 수 있는데, text 크기만큼만 공간을 점유하고 줄바꿈을 하지 않는다.</p>
+
+                <ul>
+                    <li>width/height 적용불가</li>
+                    <li>margin/padding-top/bottom 적용불가</li>
+                    <li>line-height를 원하는대로 사용할 수 없다.</li>
+                </ul>
+
+                <h4>display: block</h4>
+                <p>block 속성은 무조건 한줄을 점유하고 있고, 다음 태그는 무조건 줄바꿈이 적용된다. 대표적인 태그는 div가 있다.</p>
+
+                <h4>inline-block</h4>
+                <p>inline-block 속성은 inline 속성의 특징과 block 속성의 특징 둘 다 가지고 있는 속성이다. 기본적인 특징은 inline 속성과 비슷한데 (줄바꿈을 하지 않고, 동일한
+                라인에 작성가능) inline속성에서 할 수 없었던 width/height 변경 및 line-height를 커스텀하게 적용할 수 있는 특징이 있다.</p>
+                <ul>
+                    <li>width/height 적용 가능</li>
+                    <li>margin/padding-top/bottom 적용 가능</li>
+                    <li>line-height 적용 가능</li>
+                </ul>
+                
+                
+                
+                <h4>** 고려사항</h4>
+
+                <p>inline-block 사이에 공백이 생기게 되는데, parent 태그에 font-size: 0를 적용하면 해결된다.
+                inline-block 끼리 높이가 안맞을 때 상위 공백이 생기게 되는데 vertical-align: top을 적용하면 해결할 수 있다.
+                </p>
+
+                <h4>추가</h4>
+                <ul>
+                <li>block으로 설정하면 줄바꿈 되고, inline으로 설정하면 줄바꿈 되지 않는다.</li>
+                <li>block으로 설정하면 상/하 margin과 padding 속성을 사용할 수 있지만, inline으로 설정하면 상/하
+                    margin과 padding 속성을 사용할 수 없다.</li>
+                <li>block으로 설정하면 width, hight 속성을 사용할 수 있지만, inline으로 설정하면 width, hight 속성을 사용할 수 없다.</li>
+                <li>block구조는 inline구조 안으로 들어갈 수 있지만, inline구조는 block구조 안으로 들어갈 수 없다. 
+                    HTML5부터 &lt;a&gt; 태그는 예외이다.</li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- //refer -->
+
+    </main>
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>

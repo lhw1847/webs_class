@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png" sizes="128x128">
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/js/prism.js">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascipt</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for()문</a></li>
+                <li class="active"><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">함수</a></li>
+                <li><a href="reference07.html">조건문</a></li>
+                <li><a href="reference08.html">반복문</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="back"><a href="javascript02.html#dd">Back</a></div>
+
+    <main id="main">
+        <div class="doc">
+            <h2><strong>연산자</strong></h2>
+            <p>
+                컴퓨터에서는 다양한 연산자를 통해 계산작업을 한다.
+                자바스크립트 프로그래밍에서 사용하는 연산자는 산술, 문자 결합, 대입(복합 대입), 증감, 비교, 논리, 삼항 조건 연산자가 있다.
+                빼기, 더하기, 곱하기, 나누기, 비교 등을 하는 일련의 작업을 연산 작업이라 한다.
+            </p>
+            <h3 class="mt40">산술 연산자</h3>
+            <p>산술 연산자에는 더하기(+), 빼기(-), 곱하기(*), 나누기(/), 나머지(%)가 있다.
+                산술 연산자로 연산을 하기 위해서는 연산 대상 데이터가 반드시 2개 있어야한다.
+                다음은 산술 연산자의 종류와 기본형을 정리한 표이다.</p>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>종류</th>
+                            <th>기본형</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> + </td>
+                            <td>A + B</td>
+                            <td>더하기</td>
+                        </tr>
+                        <tr>
+                            <td> - </td>
+                            <td>A - B</td>
+                            <td>빼기</td>
+                        </tr>
+                        <tr>
+                            <td> * </td>
+                            <td>A * B</td>
+                            <td>곱하기</td>
+                        </tr>
+                        <tr>
+                            <td> / </td>
+                            <td>A / B</td>
+                            <td>나누기
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td> % </td>
+                            <td>A % B</td>
+                            <td>나머지</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="mt50">문자 결합 연산자</h3>
+            <p>문자 결합 연산자는 피연산자(연산 대상 데이터)가 문자형 데이터이다.
+                여러 개의 문자를 하나의 문자형 데이터로 결합할 때 사용한다.
+                다음과 같이 더하기에 피연산자로 문자형 데이터가 한 개라도 포함되어 있으면 다른 피연산자의 데이터는 자동으로
+                문자형 데이터로 형 변환되고 문자 결합이 이루어져 하나의 문자형 데이터를 반환한다.
+            </p>
+            <h4 class="mt20">풀이예시</h4>
+            <div class="code">
+                <pre><code>    문자형 데이터 + 문자형 데이터 = 하나의 문자형 데이터
+    "do it" + "javascript" = "do it javascript";
+
+    문자형 데이터 + 숫자형 데이터 = 하나의 문자형 데이터
+    "100" + 200 = "100200";
+</code></pre>
+            </div>
+
+            <h3 class="mt50">대입 연산자</h3>
+            <p>
+                대입연산자(=)는 연산된 데이터를 변수에 저장할 때 사용한다.
+                복합 대입 연산자(+=, -=, *=, /=, %=)는 산술 연산자와 대입 연산자가 복합적으로 적용된 것을 말한다.
+                아래 표에 대입 연산자의 종류를 나타내었다.
+            </p>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="ce">종류</td>
+                            <th class="ce">풀이</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">A = B</td>
+                            <td class="ce">A = B</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">A += B</td>
+                            <td class="ce">A = A+B</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">A *= B</td>
+                            <td class="ce">A = A*B</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">A /= B</td>
+                            <td class="ce">A = A/B</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">A %= B</td>
+                            <td class="ce">A = A%B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="mt20">풀이예시</h4>
+            <div class="code">
+                <pre><code>&lt;script&gt;
+    var num1 = 10;
+    var num2 = 3;
+
+    num1 += num2;        //num1 = num1(10) + num2(3);
+    document.write(num1, "&lt;br&gt;")  //13
+
+    num1 -= num2;        //num1 = num1(13) - num2(3);
+    document.write(num1, "&lt;br&gt;")  //10
+
+    num1 *= num2;        //num1 = num1(10) + num2(3);
+    document.write(num1, "&lt;br&gt;")  //30
+
+    num1 %= num2;        //num1 = num1(30) + num2(3);
+    document.write(num1, "&lt;br&gt;")  //0
+&lt;script&gt;
+</code></pre>
+            </div>
+
+            <h3 class="mt50">증감 연산자</h3>
+            증감 연산자에는 숫자형 데이터를 1씩 증가시키는 증가 연산자(++)와 반대로 1씩 감소시키는
+            감소 연산자(--)가 있다.
+            증감 연산자는 앞에있는 연산자와는 달리 피연산자가 한 개만 필요한 단항 연산자이다.
+            증감 연산자는 변수의 어느 위치에 오는가에 따라 결과값이 달라진다.
+            </p>
+            <div class="code">
+                <pre><code> 01. 변수의 값을 1만큼 증가시킨다.
+ 변수++; 또는 ++변수;
+ 02. 변수의 값을 1만큼 감소시킨다.
+ 변수--; 또는 --변수;
+</code></pre>
+            </div>
+            <h4 class="mt20">풀이예시</h4>
+            <div class="code">
+                <pre><code>&lt;script&gt;
+        var num1 = 10;
+        var num2 = 20;
+        var result;
+    
+        num1 --;
+        document.write(num1, "&lt;br&gt;")  //9
+    
+        num1 ++;
+        document.write(num1, "&lt;br&gt;")  //10
+    
+        result = num2++;      
+        document.write(num1, "&lt;br&gt;")   //result:20, num2: 21
+
+        result = ++num2;
+        document.write(num1, "&lt;br&gt;")   //result:22, num2: 22
+&lt;script&gt;
+</code></pre>
+            </div>
+            <h3 class="mt50">비교 연산자</h3>
+            <p>
+                두 데이터를 '크다, 작다, 같다'와 같이 비교할 때 사용하는 연산자이다.
+                연산된 결괏값은 true(참) 또는 false(거짓)로 논리형 데이터를 반환한다.
+            </p>
+            <h4 class="mt20">비교 연산자의 종류</h4>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="ce">종류</th>
+                            <th class="ce">설명</th>
+                            <th class="ce">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">A &gt; B</td>
+                            <td class="ce">A가 B보다 크다.</td>
+                            <td class="ce"></td>
+                        </tr>
+                        <tr>
+                            <td class="ce">A &lt; B</td>
+                            <td class="ce">A가 B보다 작다.</td>
+                            <td class="ce"></td>
+                        <tr>
+                            <td class="ce">A &lt;= B</td>
+                            <td class="ce">A가 B보다 크거나 같다.</td>
+                            <td class="ce"></td>
+                        </tr>
+                        <tr>
+                            <td class="ce">A &gt; B</td>
+                            <td class="ce">A가 B보다 작거나 같다.</td>
+                            <td class="ce"></td>
+                        </tr>
+                        <tr>
+                            <td class="ce">A == B</td>
+                            <td class="ce">A와 B는 같다.</td>
+                            <td class="ce">숫자를 비교할 경우 자료형(type)은 숫자형이든 문자형이든 상관하지 않고
+                                표기된 숫자만 일치하면 ture를 반환합니다.
+                                숫자형 10과 문자형 "10"은 같은 것으로 인식한다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">A != B</td>
+                            <td class="ce">A와 B는 다르다.</td>
+                            <td class="ce">숫자를 비교할 경우 자료형(type)은 숫자형이든 문자형이든 상관하지 않고
+                                표기된 숫자만 일치하면 true를 반환합니다.
+                                숫자형 10과 문자형 "10"은 같은 것으로 인식되어 A!=B에 대해 false를 반환한다.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="mt20">풀이예시</h4>
+            <div class="code">
+                <pre><code>    var x = 10, y = "10";
+    x == 10 //true
+    y == 10 //true
+
+    var x = 10, y = "10";
+
+    x === 10 //true
+    y === 10 //false
+</code></pre>
+            </div>
+
+            <h3 class="mt50">논리 연산자</h3>
+            <p>
+                논리 연산자에는 ||(or), &&(and), !(not)이 있으며, 논리 연산자는 피연산자가 논리형 데이터인
+                true 또는 false로 결괏값을 반환합니다.
+                ||(or) 연산자는 피연산자 중 하나만 true이면 ture라는 결괏값을 반환한다.
+                하지만 &&(and) 연산자는 피연산자 중 하나만 false아면 fasle라는 결괏값을 반환한다.
+                !(not)은 논리 부정 연산자로, 피연산자가 true이면 false라는 반대의 결괏값을 반환한다.
+            </p>
+            <h4 class="mt20">논리 연산자의 종류</h4>
+            <div class="table">
+                <table>
+                    <tr>
+                        <td class="ce">종류</td>
+                        <td class="ce">설명</td>
+                    </tr>
+                    <tr>
+                        <td>||</td>
+                        <td>or 연산자라 부르며, 피연산자 중 값이 하나라도 true가 존재하면 true로 결괏값을 반환한다.</td>
+                    </tr>
+                    <tr>
+                        <td>&&</td>
+                        <td>and 연산자라 부르며, 피연산자 중 값이 하나라도 false가 존재하면 false로 결괏값을 반환한다.</td>
+                    </tr>
+                    <tr>
+                        <td>!</td>
+                        <td>not 연산자라 부르며, 단항 연산자이다. 피연산자의 값이 true이면 반대로 false로 결괏값을 반환한다.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

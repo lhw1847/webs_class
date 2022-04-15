@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0;}
+        #wrap {width: 1440px; margin: 0 auto;}
+        #header {width: 100%; height: 100px; background: #FFDE81;}
+        #nav {width: 100%; height: 400px; background: #FFD34E;}
+        #main {width: 100%; height: 600px; background: #FFC825;}
+        .articleBox { background: #FF9900; width: 100px; height: 100px; margin-top: 130px;}
+        #section_t {display: flex; justify-content: space-evenly;}
+        #section_b {display: flex; justify-content: space-evenly;}
+        #footer {width: 100%; height: 100px; background: #FFB200;}
+        #section_x {display: none;}
+        @media (max-width: 1200px){
+            #wrap {width: 100%;}
+            #article5 {display: none;}
+            #article10 {display: none;}
+        }
+        @media (max-width: 768px){
+            #nav {height: 300px;}
+            #main {height: 800px;}
+            #article4 {display: none;}
+            #article5 {display: none;}
+            #article9 {display: none;}
+            #article10 {display: none;}
+            #section_x {display: block; display: flex; justify-content: space-evenly;}
+        }
+        @media (max-width: 400px){
+            #main {height: 900px; display: flex; justify-content: space-evenly;}
+            #section_t {flex-direction: column}
+            #section_b {flex-direction: column}
+            #article4 {display: block;}
+            #article5 {display: block;}
+            #article9 {display: block;}
+            #article10 {display: block;}
+            .articleBox {margin: 0;}
+            #section_x {display: none;}
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <section id="section_t">
+                <article id="article1" class="articleBox"></article>
+                <article id="article2" class="articleBox"></article>
+                <article id="article3" class="articleBox"></article>
+                <article id="article4" class="articleBox"></article>
+                <article id="article5" class="articleBox"></article>
+            </section>
+            <section id="section_b">
+                <article id="article6" class="articleBox"></article>
+                <article id="article7" class="articleBox"></article>
+                <article id="article8" class="articleBox"></article>
+                <article id="article9" class="articleBox"></article>
+                <article id="article10" class="articleBox"></article>
+            </section>
+            <section id="section_x">
+                <article id="article11" class="articleBox"></article>
+                <article id="article12" class="articleBox"></article>
+                <article id="article13" class="articleBox"></article>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

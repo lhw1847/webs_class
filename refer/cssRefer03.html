@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>이현우</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html">CSS <em>단위</a></em></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li class="active"><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">vendor prefix</a></li>
+                <li><a href="cssRefer08.html">image</a></li>
+                <li><a href="cssRefer09.html">ir 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+            <div class="refer">
+                <div class="doc">
+                    <h3><strong>CSS 단위</strong></h3>
+
+                    <h4>키워드</h4>
+                    <p>
+                        속성에 따라 사용할 수 있는 키워드가 존재한다. 예를들어 display 속성의 값으로 사용할 수 있는 키워드는 
+                        block , inline , inline-block 등 이 있다.
+                    </p>
+
+                    <h4>크기 단위</h4>
+                    <p>
+                        CSS에서 사용하는 대표적인 크기 단위는 px, em, %이다.
+                        px는 절대값이고 em, %는 상대값이다.
+                        대부분 브라우저의 폰트 사이즈 기본값은 16px , 1em, 100%이다.  
+                    </p>
+
+                    <h4>px</h4>
+                    <p>
+                        px(픽셀)단위는 화소 1개의 크기를 의미한다.
+                        이 px의 크기는 디바이스에 따라 제각각이기 때문에 명확하지가 않다. 따라서 대부분의 브라우저는 1px을 1/96인치의 절대단위로 인식한다.
+                        px은 요소의 크기나 이미지의 크기 지정에 주로 사용된다.
+                    </p>
+
+                    <h4>%</h4>
+                    <p>
+                        %는 백분율 단위의 상대단위이다. 요소의 지정된 사이즈(상속이나 기본값)에 상대적 사이즈를 설정한다. 
+                    </p>
+
+                    <h4>em</h4>
+                    <p>
+                        em은 배수 단위로 상대 단위이다. 요소의 지정된 사이즈(상속이나 기본값)에 상대적인 사이즈를 설정한다. 예로 1em은 요소에 지정된 사이즈와 동일하고 1.5em은 요소에 지정된 사이즈에 1.5배이다.
+                        중첩된 자식 요소에 em을 지정하면 자식요소들의 사이즈에 영향을 미치기 때문에 주의하여야 한다. 
+                    </p>
+
+                    <h4>rem</h4>
+                    <p>
+                        em의 기준은 상속때문에 바뀔 수도 있다.
+                        rem은 최상위 요송의 사이즈를 기준으로 삼는다 rem의 r은 root를 의미한다. 
+                    </p>
+
+                    <h4>Viewport 단위(vh,vw,vmin,vmax)</h4>
+                    <ul>
+                        <li>1vw : viewport 너비의 1%</li>
+                        <li>1vh : viewport 높이의 1%</li>
+                        <li>vmin : viewport 너비 또는 높이 중 작은쪽의 1%</li>
+                        <li>vmax : viewport 너비 또는 높이 중 큰쪽의 1%</li>
+                    </ul>
+
+                    <h4>색상 표현 단위</h4>
+                    <p>
+                        색상을 지정하기위해 키워드를 사용할 수도 있지만 색상의 수가 제한된다.
+                        이를 보안하기위해 여러가지 색상 표현 단위가 있다.
+                    </p>
+                    <ul>
+                        <li>HEX 코드 단위 - (#000000)</li>
+                        <li>RGB - rgb(255, 255, 0)</li>
+                        <li>RGBA - rgb(255, 255, 0, 1(투명도))</li>
+                        <li>HSL(Hue = 색상 , Saturation = 채도 , Lightness = 명도) - hsl(0,100%,25%)</li>
+                        <li>HSLA - hsla(0,100%,25%,1(투명도))</li>
+                    </ul>
+                </div>
+                </div>
+
+        <!-- //refer -->
+
+    </main>
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

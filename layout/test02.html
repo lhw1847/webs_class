@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 100%;
+        }
+
+        #header {
+            height: 100px;
+            background-color: #EFEBE9;
+        }
+
+        #nav {
+            height: 100px;
+            background-color: #BCAAA4;
+        }
+
+        #nav .contaner {
+            display: flex;
+        }
+
+        #nav .contaner .nav1 {
+            width: 50%;
+            height: 100px;
+            background: #3E2723;
+        }
+
+        #nav .contaner .nav2 {
+            width: 50%;
+            height: 100px;
+            background: #A1887F;
+        }
+
+        #contents {
+            height: 780px;
+            background-color: #8D6E63;
+        }
+
+        #footer {
+            height: 100px;
+            background-color: #4E342E;
+        }
+
+        .contaner {
+            width: 1200px;
+            height: inherit;
+            background: rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+        }
+
+        #contents .contaner {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        #contents .contaner .article1 {
+            width: 800px;
+            height: 390px;
+            background-color: #6D4C41;
+        }
+
+        #contents .contaner .article2 {
+            width: 800px;
+            height: 390px;
+            background-color: #5D4037;
+        }
+
+        #contents .contaner .article1 .article3 {
+            width: 50%;
+            height: 390px;
+            background-color: #000;
+        }
+
+        #contents .contaner .article1 .article4 {
+            width: 50%;
+            height: 390px;
+            background-color: #6D4C41;
+        }
+
+        #contents .contaner .aside {
+            width: 400px;
+            height: 780px;
+            background-color: #795548;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="contaner">
+
+            </div>
+        </header>
+        <nav id="nav">
+            <div class="contaner">
+                <div class="nav1"></div>
+                <div class="nav2"></div>
+            </div>
+        </nav>
+        <section id="contents">
+            <div class="contaner">
+                <div class="article1">
+                    <div class="article3"></div>
+                    <div class="article4"></div>
+                </div>
+                <div class="article2"></div>
+                <div class="aside"></div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="contaner"></div>
+        </footer>
+    </div>
+</body>
+
+</html>

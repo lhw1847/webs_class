@@ -506,6 +506,9 @@
             $(document).on("click", ".stop", function() {
                 var target = $(".memoryBox", window.parent.document);
                 target.removeClass("show");
+                resultBox.classList.remove("active");
+                failBox.classList.remove("active");
+                infoBox.classList.add("active");
             });
         });
     </script>

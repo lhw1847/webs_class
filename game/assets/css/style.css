@@ -11,6 +11,9 @@ body {
     cursor: progress;
     /* cursor: none; */
 }
+a {
+    text-decoration: none;
+}
 /* a {
     cursor: none;
 }
@@ -29,8 +32,12 @@ header {
     padding: 0 20px 0 20px;
 }
 header h1 {
-    font-size: 20px;
     padding: 5px;
+    display: flex;
+    align-items: center;
+}
+header h1 a {
+    font-size: 20px;
     color: #fff;
     text-transform: uppercase;
 }

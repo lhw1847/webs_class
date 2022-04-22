@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'LABDigital';
+}
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: progress;
+    /* cursor: none; */
+}
+/* a {
+    cursor: none;
+}
+.cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 17px; height: 20px;
+    background: url(img/pointer.svg);
+    user-select: none;
+    pointer-events: none;
+} */
+header {
+    background: rgb(120, 67, 182);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+}
+header h1 {
+    font-size: 20px;
+    padding: 5px;
+    color: #fff;
+    text-transform: uppercase;
+}
+header #time {
+    font-size: 20px;
+    padding: 5px;
+    color: #fff;
+    text-transform: uppercase;
+}
+.hoverBtn1 {
+}
+.btn {
+    position: absolute;
+    text-align: center;
+}
+.btn a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(140deg, #ED99FB 30%, #C1BBFC 50%, rgba(255,255,255,.6) 70%);
+    transition: all 0.3s;
+    cursor: grab;
+}
+.btn a img {
+    width: 30px;
+    padding-top: 10px;
+}
+.btn a span {
+    position: absolute;
+    left: 50%; bottom: -20px;
+    transform: translateX(-50%);
+    background: rgb(49, 248, 204);
+    padding: 0 10px;
+    white-space: nowrap;
+}
+.btn:active a {
+    background: rgb(49, 248, 204);
+    cursor: grabbing;
+}
+.btn1 {
+    z-index: 100;
+    left: 100px;
+    top: 100px;
+}
+.btn2 {
+    z-index: 100;
+    left: 200px;
+    top: 100px;
+}
+.btn3 {
+    z-index: 100;
+    left: 330px;
+    top: 100px;
+}
+.btn4 {
+    z-index: 100;
+    left: 450px;
+    top: 100px;
+}
+.musicBox {
+    position: absolute;
+    right: -500px;
+    top: 10px;
+    width: 400px;
+    height: 700px;
+    z-index: 100;
+    transition: all 0.4s;
+}
+.musicBox.show {
+    right: 10px;
+}
+.memoryBox {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
+    0 6px 10px 0 rgba(0,0,0,0.17);
+}
+.typingBox {
+    position: absolute;
+    left: 0;
+    bottom: -100vh;
+    width: 100%;
+    height: 80vh;
+    transition: all 0.4s;
+}
+.typingBox.show {
+    bottom: 0;
+}
+.cardBox {
+    position: absolute;
+    left: 0;
+    bottom: -100vh;
+    width: 100%;
+    height: 80vh;
+    transition: all 0.4s;
+}
+.cardBox.show {
+    bottom: 0;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💾</text></svg>">
+    <link href="https://webfontworld.github.io/fontlab/LABDigital.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/indexBg.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1>Game Site</h1>
+        <span id="time"></span>
+    </header>
+    <main>
+        <div class="btn btn1">
+            <a href="#">
+                <img src="assets/img/001.svg" alt="">
+                <span>Music</span>
+            </a>
+        </div>
+        <div class="btn btn2">
+            <a href="#">
+                <img src="assets/img/002.svg" alt="">
+                <span>Momory Game</span>
+            </a>
+        </div>
+        <div class="btn btn3">
+            <a href="#">
+                <img src="assets/img/003.svg" alt="">
+                <span>Typing Game</span>
+            </a>
+        </div>
+        <div class="btn btn4">
+            <a href="#">
+                <img src="assets/img/004.svg" alt="">
+                <span>Card Game</span>
+            </a>
+        </div>
+    </main>
+
+    <div class="musicBox">
+        <iframe class="musicBoxIframe" src="../javascript/musicPlayer/index.html" frameborder="0"></iframe>
+    </div>
+    <div class="memoryBox">
+        <iframe class="typingBoxIframe" src="memory/index2.html" frameborder="0"></iframe>
+    </div>
+    <div class="typingBox">
+        <iframe class="typingBoxIframe" src="../javascript/typingGame/index.html" frameborder="0"></iframe>
+    </div>
+    <div class="cardBox">
+        <iframe class="cardBoxIframe" src="../javascript/cardGame/index.html" frameborder="0"></iframe>
+    </div>
+    <div class="cursor"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(".btn1").draggable();
+        $(".btn2").draggable();
+        $(".btn3").draggable();
+        $(".btn4").draggable();
+        $(".btn1").click(function(){
+            $(".musicBox").toggleClass("show")
+        });
+        $(".btn3").click(function(){
+            $(".typingBox").toggleClass("show")
+        });
+        $(".btn4").click(function(){
+            $(".cardBox").toggleClass("show")
+        });
+
+        function printTime() {
+            var clock = document.getElementById("time");
+            var now = new Date();
+            var nowTime = now.getHours() + " : " + now.getMinutes() + " : " + now.getSeconds();
+            clock.innerHTML = nowTime;
+            setTimeout("printTime()",1000);
+            }
+            window.onload = function() {
+            printTime();
+
+        }
+        window.addEventListener("mousemove", (e) => {
+            let x = e.clientX - 25 + "px";
+            let y = e.clientY - 25 + "px";
+            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;
+        });
+</script>
+</body>
+</html>

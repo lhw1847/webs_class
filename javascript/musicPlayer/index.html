@@ -14,7 +14,9 @@
     <style>
         *{margin: 0; padding: 0; box-sizing: border-box; font-family: poppin;}
         :root{--pink: #FF74A4; --violet: #9F6EA3; --white: #fff; --lightshadow: rgba(0, 0, 0, 0.15); --lightblack: #515C6F; --pinkshadow: #FFCBDD; --darkwhite: #CECACA;}
-        body{height: 100vh; background: linear-gradient(var(--pink) 0%, var(--violet) 100%);}
+        body{height: 100vh; 
+            /* background: linear-gradient(var(--pink) 0%, var(--violet) 100%); */
+        }
         .wrap__music{display: flex;align-items: center; justify-content: center; min-height: 100%; user-select: none;}
         .music__inner{width: 380px; padding: 25px 30px; overflow: hidden; position: relative; border-radius: 15px; background: var(--white); box-shadow: 0 6px 15px var(--lightshadow);}
         .music__top{display: flex; align-items: center; justify-content: space-between;}
@@ -46,13 +48,14 @@
         .music__list .list > ul > li.playing{color: var(--pink);}
         .music__list .list > ul > li > div > em{font-style: normal;}
         .music__list .list > ul > li > div > p{opacity: 0.8;}
+        .bar, .material-icons {cursor: pointer;}
     </style>
 </head>
 <body>
     <div class="wrap__music">
         <div class="music__inner">
             <div class="music__top">
-                <i class="material-icons">expand_more</i>
+                <i class="material-icons expand_more">expand_more</i>
                 <h3>Now Playing</h3>
                 <i class="material-icons">more_horiz</i>
             </div>
@@ -113,6 +116,7 @@
             <!-- //music__list -->
         </div>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="api/music.js"></script>
     <script>
         const musicWrap = document.querySelector(".wrap__music");
@@ -313,6 +317,13 @@
         window.addEventListener("load", () => {
             loadMusic(musicIndex);
             playListMusic();
+        });
+
+        $(function() {
+            $(document).on("click", ".expand_more", function() {
+                var target = $(".musicBox", window.parent.document);
+                target.removeClass("show");
+            });
         });
     </script>
 </body>

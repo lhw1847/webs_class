@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="../../assets/face/music.png">
     <link rel="apple-touch-icon-precomposed" href="../../assets/face/music.png">
     <link rel="icon" href="../../assets/face/music.png" sizes="128x128">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <style>
         *{margin: 0; padding: 0; box-sizing: border-box; font-family: poppin;}
         :root{--pink: #FF74A4; --violet: #9F6EA3; --white: #fff; --lightshadow: rgba(0, 0, 0, 0.15); --lightblack: #515C6F; --pinkshadow: #FFCBDD; --darkwhite: #CECACA;}
@@ -22,7 +23,7 @@
         .music__top{display: flex; align-items: center; justify-content: space-between;}
         .music__top i{font-size: 30px; color: var(--lightblack);}
         .music__top h3{font-size: 30px; color: var(--lightblack); font-weight: 500;}
-        .music__img{width: 100%; height: 256px; overflow: hidden; border-radius: 15px; margin-top: 25px; box-shadow: 0 6px 12px var(--lightshadow); display: block;}
+        .music__img{width: 100%; height: 256px; overflow: hidden; border-radius: 15px; margin-top: 25px; box-shadow: 0 6px 12px var(--lightshadow);}
         .music__img.show{display: none;}
         .music__img img{width: 100%; height: 100%; vertical-align: top; object-fit: cover;}
         .music__song{text-align: center; margin: 30px 30px 0 30px; display: block;}
@@ -118,7 +119,6 @@
             <!-- //music__list -->
         </div>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="api/music.js"></script>
     <script>
         const musicWrap = document.querySelector(".wrap__music");

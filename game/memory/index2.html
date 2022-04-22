@@ -160,7 +160,7 @@
         .card__sound button{line-height: 40px; background: #fff; width: 40px; height: 40px; border-radius: 50%; text-align: center; border: 0;  color: #007bff;}
         .card__start{position: absolute; left: 20px; top: 20px; cursor: pointer;}
         .card__start button{line-height: 40px; background: #fff; width: 40px; height: 40px; border-radius: 50%; text-align: center; border: 0;  color: #007bff;}
-        .remain {z-index: 9999; position: fixed; top: 5px;}
+        .remain {z-index: 9999; position: fixed; top: 5px; left: 30px;}
     </style>
 </head>
 <body>
@@ -174,8 +174,8 @@
         <div class="list">
             <ol>
                 <li>당신에게는 기회가 <em>5번</em> 있습니다.</li>
-                <li>기회를 5번을 소진하면, 시도가 1번 발생합니다.</li>
-                <li>시도를 3번하면 죽습니다.</li>
+                <li>기회를 5번을 소진하면 실패 하게됩니다.</li>
+                <li>기본 점수는 5점이며, 틀릴 시 1점씩 떨어집니다.</li>
                 <li>적은 기회로 완성하면 점수가 높습니다.</li>
                 <li>1등에게는 자동차를 선물로 드리겠습니다.</li>
             </ol>
@@ -348,6 +348,7 @@
             <button class="failRestart">다시 도전하기</button>
         </div>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>
         const startBtn = document.querySelector(".start__btn");
         const infoBox = document.querySelector(".info__box");
@@ -469,15 +470,15 @@
             }
             remain.innerText = "현재 남은 기회 : " + (answer - lifeCurrent);
             if(answer - lifeCurrent == 5){
-                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "입니다. 좀 치시네요?";
+                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 좀 치시네요?";
             } else if(answer - lifeCurrent == 4){
-                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "입니다. 잘 했어요!!";
+                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 잘 했어요!!";
             } else if(answer - lifeCurrent == 3){
-                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "입니다. 아주 잘 했어요!!";
+                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 아주 잘 했어요!!";
             } else if(answer - lifeCurrent == 2){
-                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "입니다. 조금만 분발하세요.";
+                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 조금만 분발하세요.";
             } else if(answer - lifeCurrent == 1){
-                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "입니다. 좋지 않은 성적이예요.";
+                score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 좋지 않은 성적이예요.";
             }
             
         }
@@ -500,6 +501,13 @@
                 imgTag.src = `img/img-${arr[index]}.png`;
             })
         }
+
+        $(function() {
+            $(document).on("click", ".stop", function() {
+                var target = $(".memoryBox", window.parent.document);
+                target.removeClass("show");
+            });
+        });
     </script>
 </body>
 </html>

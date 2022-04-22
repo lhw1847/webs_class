@@ -91,10 +91,16 @@ header #time {
     left: 450px;
     top: 100px;
 }
+
+.btn5 {
+    z-index: 100;
+    right: 100px;
+    top: 100px;
+}
 .musicBox {
     position: absolute;
     right: -500px;
-    top: 10px;
+    top: 50px;
     width: 400px;
     height: 700px;
     z-index: 100;
@@ -117,6 +123,15 @@ header #time {
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
     0 6px 10px 0 rgba(0,0,0,0.17);
+}
+.memoryBox {
+    z-index: -10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.memoryBox.show {
+    z-index: 1;
+    opacity: 1;
 }
 .typingBox {
     position: absolute;

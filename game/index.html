@@ -16,28 +16,37 @@
         <span id="time"></span>
     </header>
     <main>
+        <!-- game -->
         <div class="btn btn1">
             <a href="#">
-                <img src="assets/img/001.svg" alt="">
+                <img src="assets/img/game01.svg" alt="">
                 <span>Music</span>
             </a>
         </div>
         <div class="btn btn2">
             <a href="#">
-                <img src="assets/img/002.svg" alt="">
+                <img src="assets/img/game02.svg" alt="">
                 <span>Momory Game</span>
             </a>
         </div>
         <div class="btn btn3">
             <a href="#">
-                <img src="assets/img/003.svg" alt="">
+                <img src="assets/img/game03.svg" alt="">
                 <span>Typing Game</span>
             </a>
         </div>
         <div class="btn btn4">
             <a href="#">
-                <img src="assets/img/004.svg" alt="">
+                <img src="assets/img/game04.svg" alt="">
                 <span>Card Game</span>
+            </a>
+        </div>
+
+        <!-- site -->
+        <div class="btn btn5">
+            <a target="_blank" href="https://leehyunwooreact.netlify.app/">
+                <img src="assets/img/site01.svg" alt="">
+                <span>React Site</span>
             </a>
         </div>
     </main>
@@ -46,14 +55,14 @@
         <iframe class="musicBoxIframe" src="../javascript/musicPlayer/index.html" frameborder="0"></iframe>
     </div>
     <div class="memoryBox">
-        <iframe class="typingBoxIframe" src="memory/index2.html" frameborder="0"></iframe>
+        <iframe class="memoryBoxIframe" src="memory/index2.html" frameborder="0"></iframe>
     </div>
     <div class="typingBox">
         <iframe class="typingBoxIframe" src="../javascript/typingGame/index.html" frameborder="0"></iframe>
     </div>
-    <div class="cardBox">
+    <!-- <div class="cardBox">
         <iframe class="cardBoxIframe" src="../javascript/cardGame/index.html" frameborder="0"></iframe>
-    </div>
+    </div> -->
     <div class="cursor"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -65,12 +74,15 @@
         $(".btn1").click(function(){
             $(".musicBox").toggleClass("show")
         });
+        $(".btn2").click(function(){
+            $(".memoryBox").toggleClass("show")
+        });
         $(".btn3").click(function(){
             $(".typingBox").toggleClass("show")
         });
-        $(".btn4").click(function(){
-            $(".cardBox").toggleClass("show")
-        });
+        // $(".btn4").click(function(){
+        //     $(".cardBox").toggleClass("show")
+        // });
 
         function printTime() {
             var clock = document.getElementById("time");

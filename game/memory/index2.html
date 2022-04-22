@@ -156,7 +156,7 @@
             border: 1px solid #007BFF;
             color: #007BFF
         }
-        .card__sound{position: fixed; right: 20px; top: -4px; cursor: pointer;}
+        .card__sound{position: fixed; right: 50px; top: -4px; cursor: pointer;}
         .card__sound button{line-height: 40px; background: #fff; width: 40px; height: 40px; border-radius: 50%; text-align: center; border: 0;  color: #007bff;}
         .card__start{position: absolute; left: 20px; top: 20px; cursor: pointer;}
         .card__start button{line-height: 40px; background: #fff; width: 40px; height: 40px; border-radius: 50%; text-align: center; border: 0;  color: #007bff;}
@@ -164,7 +164,7 @@
     </style>
 </head>
 <body>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
     <!-- 시작버튼 -->
     <div class="start__btn active">
         <button>Start</button>
@@ -502,15 +502,22 @@
             })
         }
 
-        $(function() {
-            $(document).on("click", ".stop", function() {
-                var target = $(".memoryBox", window.parent.document);
-                target.removeClass("show");
-                resultBox.classList.remove("active");
-                failBox.classList.remove("active");
-                infoBox.classList.add("active");
-            });
-        });
+        document.querySelector(".stop").addEventListener("click", () => {
+            resultBox.classList.remove("active");
+            failBox.classList.remove("active");
+            infoBox.classList.remove("active");
+            document.querySelector(".start__btn").classList.add("active");
+        })
+
+        // $(function() {
+        //     $(document).on("click", ".stop", function() {
+        //         var target = $(".memoryBox", window.parent.document);
+        //         target.removeClass("show");
+        //         resultBox.classList.remove("active");
+        //         failBox.classList.remove("active");
+        //         infoBox.classList.add("active");
+        //     });
+        // });
     </script>
 </body>
 </html>

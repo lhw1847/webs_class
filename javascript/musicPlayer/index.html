@@ -21,7 +21,7 @@
         .music__inner{width: 380px; padding: 25px 30px; overflow: hidden; position: relative; border-radius: 15px; background: var(--white); box-shadow: 0 6px 15px var(--lightshadow);}
         .music__top{display: flex; align-items: center; justify-content: space-between;}
         .music__top i{font-size: 30px; color: var(--lightblack);}
-        .music__top h3{font-size: 30px; color: var(--lightblack); font-weight: 500;}
+        .music__top h3{font-size: 18px; color: var(--lightblack); font-weight: 500;}
         .music__img{width: 100%; height: 256px; overflow: hidden; border-radius: 15px; margin-top: 25px; box-shadow: 0 6px 12px var(--lightshadow);}
         .music__img.show{display: none;}
         .music__img img{width: 100%; height: 100%; vertical-align: top; object-fit: cover;}
@@ -54,13 +54,12 @@
     </style>
 </head>
 <body>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <div class="wrap__music">
         <div class="music__inner">
             <div class="music__top">
                 <i class="material-icons expand_more">expand_more</i>
+                <h3 class="power">Now Playing</h3>
                 <i class="material-icons more_horiz">more_horiz</i>
-                <h3 class="material-icons power">chevron_right</h3>
             </div>
             <!-- //music__top -->
             <div class="music__img">
@@ -119,6 +118,7 @@
             <!-- //music__list -->
         </div>
     </div>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
     <script src="api/music.js"></script>
     <script>
         const musicWrap = document.querySelector(".wrap__music");
@@ -337,12 +337,12 @@
             document.querySelector(".music__song").classList.toggle("show");
         })
 
-        $(function() {
-            $(document).on("click", ".power", function() {
-                var target = $(".musicBox", window.parent.document);
-                target.removeClass("show");
-            });
-        });
+        // $(function() {
+        //     $(document).on("click", ".power", function() {
+        //         var target = $(".musicBox", window.parent.document);
+        //         target.removeClass("show");
+        //     });
+        // });
     </script>
 </body>
 </html>

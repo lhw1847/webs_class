@@ -29,7 +29,7 @@
         <div class="btn btn2">
             <a href="#">
                 <img src="assets/img/game02.svg" alt="">
-                <span>Momory Game</span>
+                <span>Memory Game</span>
             </a>
         </div>
         <div class="btn btn3">
@@ -55,12 +55,15 @@
     </main>
 
     <div class="musicBox">
+        <div><button class="iframe_btn"></button></div>
         <iframe class="musicBoxIframe" src="../javascript/musicPlayer/index.html" frameborder="0"></iframe>
     </div>
     <div class="memoryBox">
+        <div><button class="iframe_btn"></button></div>
         <iframe class="memoryBoxIframe" src="memory/index2.html" frameborder="0"></iframe>
     </div>
     <div class="typingBox">
+        <div><button class="iframe_btn"></button></div>
         <iframe class="typingBoxIframe" src="../javascript/typingGame/index.html" frameborder="0"></iframe>
     </div>
     <!-- <div class="cardBox">
@@ -100,6 +103,12 @@
             let x = e.clientX - 25 + "px";
             let y = e.clientY - 25 + "px";
             document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;
+        });
+
+        $(".iframe_btn").click(function(){
+            $(".musicBox").removeClass("show")
+            $(".memoryBox").removeClass("show")
+            $(".typingBox").removeClass("show")
         });
 </script>
 </body>

@@ -42,7 +42,7 @@
         <div class="btn btn4">
             <a href="#">
                 <img src="assets/img/game04.svg" alt="">
-                <span>Card Game</span>
+                <span>Tetris Game</span>
             </a>
         </div>
 
@@ -67,9 +67,9 @@
         <div><button class="material-icons iframe_btn">exit_to_app</button></div>
         <iframe class="typingBoxIframe" src="../javascript/typingGame/index.html" frameborder="0"></iframe>
     </div>
-    <!-- <div class="cardBox">
-        <iframe class="cardBoxIframe" src="../javascript/cardGame/index.html" frameborder="0"></iframe>
-    </div> -->
+    <div class="tetrisBox">
+        <iframe class="cardBoxIframe" src="tetrisGame/index.html" frameborder="0"></iframe>
+    </div>
     <div class="cursor"></div>
     <script>
         $(".btn1").draggable();
@@ -85,9 +85,9 @@
         $(".btn3").click(function(){
             $(".typingBox").toggleClass("show")
         });
-        // $(".btn4").click(function(){
-        //     $(".cardBox").toggleClass("show")
-        // });
+        $(".btn4").click(function(){
+            $(".tetrisBox").toggleClass("show")
+        });
 
         function printTime() {
             var clock = document.getElementById("time");

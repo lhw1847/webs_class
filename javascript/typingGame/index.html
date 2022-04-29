@@ -17,7 +17,7 @@
         body{background: #17a2bb;}
         .typing__wrap{display: flex; align-items: center; justify-content: center; height: 100vh;}
         .typing__inner{width: 60vw; height: 60vh; min-width: 900px; min-height: 40vh; background: #fff; border-radius: 20px; padding: 40px;}
-        .input__field{position: absolute; left: 10px; top: 10px; padding: 10px;}
+        .input__field{position: absolute; left: 10px; top: 10px; padding: 10px; opacity: 0;}
         .typing__text{border: 1px solid #c3c3c3; min-height: 300px; border-radius: 10px; padding: 10px; height: 400px; font-size: 22px; font-weight: 300; text-align: justify; word-break: break-all;}
         .typing__text p span{position: relative;}
         .typing__text p span.correct{color: blue;}
@@ -114,7 +114,7 @@
         let charIndex = 0;
         let mistakes = 0;
         let timer;
-        let maxTime = 5;
+        let maxTime = 60;
         let timeLeft = maxTime;
         let isTyping = 0;
 

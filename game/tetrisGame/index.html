@@ -105,8 +105,14 @@
         }
 
         .result__box {
-            width: 500px;
-            background: #fff;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.8);
+            color: #fff;
             border-radius: 5px;
             font-size: 1.3em;
             z-index: 100;
@@ -242,7 +248,8 @@
         <div class="result__box">
             <div class="title">게임이 끝났습니다!</div>
             <div class="score">
-                당신의 점수는 몇 00점입니다.
+                당신의 점수는 <span>0</span>
+                 점입니다.
             </div>
             <div class="buttons">
                 <button class="stop">그만하기</button>
@@ -264,6 +271,7 @@
         const tetrisS = document.querySelector(".tetris__wrap .s");
         const infoBox = document.querySelector(".info__box");
         const resultBox = document.querySelector(".result__box");
+        const resultS = resultBox.querySelector(".score span");
 
         const game_rows = 20;
         const game_cols = 10;
@@ -381,6 +389,7 @@
                     
                     setTimeout(() => {
                         renderBlocks("retry");
+                        isGame = false;
 
                         if(moveType === "top"){
                             seizeBlock();
@@ -392,11 +401,6 @@
             movingItem.left = left;
             movingItem.top = top;
             movingItem.direction = direction
-        }
-        function gameover(){
-            if(document.querySelector(".tetris__wrap .tetris__inner ul li").classList.contains("seized")){
-                return;
-            }
         }
 
         function seizeBlock(){
@@ -421,8 +425,9 @@
                 if(matched){
                     child.remove();
                     tetrisLine();
-                    gameScore++;
-                    tetrisS.innerText = gameScore
+                    gameScore+=100;
+                    tetrisS.innerText = gameScore;
+                    resultS.innerText = gameScore;
                 }
             })
             generateNewBlock();
@@ -464,54 +469,63 @@
             renderBlocks(moveType);
         }
 
+        // 게임 종료
+        function gameover(){
+            resultBox.style.opacity = "1";
+            document.addEventListener("keydown", e => {
+                e.preventDefault();
+            }) 
+        }
+
         //모양 변경하기
-function changeDirection(){
-    const direction = gameMovingItem.direction;
-    direction === 3 ? gameMovingItem.direction = 0 : gameMovingItem.direction +=1;
-    
-    renderBlocks();
-}
-function change_Direction(){
-    const direction = gameMovingItem.direction;
-    direction === 0 ? gameMovingItem.direction = 3 : gameMovingItem.direction -=1;
-    
-    renderBlocks();
-}
+        function changeDirection(){
+            const direction = gameMovingItem.direction;
+            direction === 3 ? gameMovingItem.direction = 0 : gameMovingItem.direction +=1;
+            
+            renderBlocks();
+        }
+        function change_Direction(){
+            const direction = gameMovingItem.direction;
+            direction === 0 ? gameMovingItem.direction = 3 : gameMovingItem.direction -=1;
+            
+            renderBlocks();
+        }
 
-//스페이스바 누르기
-function dropBlock(){
-    clearInterval(gameInterval);
-            gameInterval = setInterval(() => {
-                moveBlock("top", 1)
-            }, 10);
-}
+        //스페이스바 누르기
+        function dropBlock(){
+            clearInterval(gameInterval);
+                gameInterval = setInterval(() => {
+                    moveBlock("top", 1)
+                }, 10);
+        }
 
-//키보드 이벤트
-document.addEventListener("keydown", e => {
-    // console.log(e);
-    switch(e.keyCode){
-        case 39:
-            moveBlock("left", 1);
-        break;
-        case 37:
-            moveBlock("left", -1);
-        break;
-        case 40:
-            moveBlock("top", 1);
-        break;
-        case 90:
-            changeDirection();
-        break;
-        case 88:
-            change_Direction();
-        break;
-        case 32:
-            dropBlock();
-        break;
-        default:
-        break;
-    }
-})
+        //키보드 이벤트
+        document.addEventListener("keydown", e => {
+            // console.log(e);
+            switch(e.keyCode){
+                case 39:
+                    moveBlock("left", 1);
+                break;
+                case 37:
+                    moveBlock("left", -1);
+                break;
+                case 40:
+                    moveBlock("top", 1);
+                break;
+                case 90:
+                    changeDirection();
+                break;
+                case 88:
+                    change_Direction();
+                break;
+                case 32:
+                    dropBlock();
+                break;
+                default:
+                break;
+            }
+            event.preventDefault();
+        })
 
 
 

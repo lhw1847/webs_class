@@ -1,33 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {color: black;}
-    </style>
+  
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>My New Pen!</title>
+  
+  <!--  Styles  -->
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 <body>
-    <script>
-{        
-    function func(){
-        let a = 0, sum = 0;
-        while(a < 10){
-            a++;
-            
-            
-            if(a % 2 ==1) continue;
-            sum += a;
-            console.log(sum);
-            
-        }
 
-    }
-    func();
+  <div>
+    <button id="btnTest" class="btn btn-primary"> show modal </button>
+  </div>
+  <div id="debug"></div>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script>
+$(function(){
+
+$("#btnTest").click(function(){
+	var option = {
+	  backdrop:"static",
+	  bg_color: "bg-warning",
+	  title:"preview",
+	  contents:"<img src=''></img>",
+	  focusedId:"myfocus",
+	  maxWidth:"900",
+	  draggable: "true"
+	}
+	gfn_modal(option);
+});
+
+/**
+ * Bootstrap’s JavaScript modal plug-in to add dialogs
+ * JavaScript의 alert를 대신할 수 있는 단순한 형태의 모달 창을 표시
+ * @param option
+ * backdrop:"true","false","static"(static for a backdrop which doesn't close the modal on click.), default is "static"
+ * bg_color: modal-header에 사용할 수 있는 background color 
+ *   단순한 헤더 컬러:"bg-primary", "bg-success", "bg-info", "bg-warning", "bg-danger", "bg-secondary", "bg-dark" and "bg-light"
+ *  Alert를 위한 컬러:"alert-primary", "alert-secondary", "alert-success", "alert-danger", "alert-warning", "alert-info", "alert-light", "alert-dark"
+ *  default is "bg-info"
+ * title:"" 모달 창의 타이틀,
+ * contents:"" 모달 창에 표시할 본문 내용,
+ * focusedId:"" 모달 창을 닫을 때 포커스할 부모 창의 엘리먼트 ID
+ * maxWidth:"" 모달 창의 사이즈를 표시(단위: px 고정)
+ * draggable:"false" 모달 창을 드레그할 수 있도록 한다.(https://code.jquery.com/ui/1.12.1/jquery-ui.min.js)
+ * contentHref: ajax로 호출할 컨텐트의 내용
+ * @returns
+ */
+function gfn_modal(option){
+	if(!!$("#gModalDialog")){
+		$("#gModalDialog").remove();
+	}
+	
+	var optionDefault ={
+		backdrop: "false",
+		bg_color: "bg-info",
+		title:"",
+		contents:"",
+		focusedId:"",
+		maxWidth:"",
+		draggable:"false",
+        contentHref:""
+	}
+	
+	option = $.extend(optionDefault, option);
+	var dialog =
+		'<div class="modal fade" id="gModalDialog" tabindex="-1" role="dialog" aria-hidden="false" data-backdrop="' + option.backdrop + '" data-keyboard="false">' +
+		'  <div class="modal-dialog modal-dialog-centered" role="dialog">' +
+		'    <div class="modal-content">' +
+		'      <div class="modal-header ' + option.bg_color + '">' +
+		'        <h5 class="modal-title" id="alertTitle">' + option.title + '</h5>' +
+		'        <button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+		'          <span aria-hidden="true">&times;</span>' +
+		'        </button>' +
+		'      </div>' +
+		'      <div class="modal-body" style="text-align:center">' +
+			   option.contents +
+		'      </div>' +
+		'      <div class="modal-footer">' +
+		'        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+		'      </div>' +
+		'    </div>' +
+		'  </div>' +
+		'</div>';
+	$("body").append(dialog);
+	$('#gModalDialog').on('hidden.bs.modal', function (e) {
+		if(option.focusedId !== ""){ $("#" + option.focusedId).focus();}
+	});
+	// 모달을 드레그할 수 있도록 처리
+	if( option.draggable === "true"){
+		$('.modal-dialog').draggable({ handle: ".modal-header" });
+		$(".modal-header").css({'cursor':'all-scroll'});
+	}
+	
+	// 모달의 사이즈를 조정할 수 있도록 처리  
+	$('#gModalDialog').on('show.bs.modal', function () {
+		if( option.maxWidth !== ""){
+			$(this).find('.modal-dialog').attr('style', 'max-width: ' + option.maxWidth + 'px;'); // modal.scss의 max-width를 override
+		}
+		$(this).find('.modal-body').css({'max-height':'100%'});
+		if( option.contentHref !== ""){
+			$(this).find(".modal-body").load(option.contentHref);
+		}
+	});
+	$("#gModalDialog").modal('show');
 }
-    
-    </script>
+
+})
+</script>
 </body>
 </html>
+[출처] [Bootstrap]modal 사이즈, Draggable|작성자 monad
